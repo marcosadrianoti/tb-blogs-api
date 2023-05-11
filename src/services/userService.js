@@ -1,10 +1,13 @@
 // const bcrypt = require('bcryptjs');
 const { User } = require('../models');
 
-// const createUser = ({ username, password }) => User.create({ username, password });
+const createUser = ({ displayName, email, password, image }) => {
+  const userCreated = User.create({ displayName, email, password, image });
+  return { status: 201, message: userCreated };
+};
   // const salt = bcrypt.genSaltSync(5);
   // const encryptedPassword = bcrypt.hashSync(password, salt);
-  // return User.create({ username, password});
+//   return User.create({ displayName, email, password, image});
 // }
 
 // const getUsers = () => User.findAll();
@@ -17,4 +20,5 @@ const getForLogin = (email, password) => User.findOne({ where: { email, password
 
 module.exports = {
   getForLogin,
+  createUser,
 };
