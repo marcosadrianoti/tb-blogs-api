@@ -7,6 +7,7 @@ services:
     # como a imagem do container
     image: node:16
     # Nome do container para facilitar execução
+    user: node
     container_name: blogs_api
     # Mesmo que `docker run -t`
     tty: true
