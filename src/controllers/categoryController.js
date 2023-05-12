@@ -12,10 +12,10 @@ const createCategory = async (req, res) => {
     return res.status(201).json(category.message);
 };
 
-// const getUsers = async (req, res) => {
-//   const users = await UserService.getUsers();
-//   return res.status(users.status).json(users.message);
-// };
+const getCategories = async (req, res) => {
+  const categories = await CategoryService.getCategories();
+  return res.status(categories.status).json(categories.message);
+};
 
 // const getByUserId = async (req, res) => {
 //   const userId = req.params.id;
@@ -28,4 +28,5 @@ const createCategory = async (req, res) => {
 
 module.exports = {
   createCategory,
+  getCategories,
 };
