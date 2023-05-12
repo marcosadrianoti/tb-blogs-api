@@ -35,14 +35,21 @@ const createUser = async ({ displayName, email, password, image }) => {
 
 const getUsers = async () => {
   const allUsers = await User.findAll({ attributes: { exclude: ['password'] } });
-  console.log('allUsers ------>', allUsers);
   return { status: 200, message: allUsers };
 };
 
-// const getByUserId = (userId) => User.findByPk(userId);
+const getByUserId = async (userId) => {
+  const user = await User.findByPk(userId, { attributes: { exclude: ['password'] } });
+  if (!user) {
+    return { status: 404,
+    message: { message: 'User does not exist' } };
+  }
+  return { status: 200, message: user };
+};
 
 module.exports = {
   getForLogin,
   createUser,
   getUsers,
+  getByUserId,
 };
