@@ -5,31 +5,22 @@ const areThereCategory = async (categoryIds) => {
     const thereIs = await Category.findByPk(categoryId);
     return !!thereIs;
   });
-  // console.log(' ==========>', thereIs);
   const teste = await Promise.all(promises);
-  console.log('teste ==========>', teste);
-  console.log('teste.includes ==========>', teste.includes(false));
   return (teste.includes(false));
 };
-
-const areFields = (title, content, userId) => {
-  if (!title || !content || !userId) {
+const areFields = (title, content, userId, categoryIds) => {
+  if (!title || !content || !userId || !categoryIds) {
     return false;
   }
 };
 
 const insertNewPost = async ({ title, content, userId, categoryIds }) => {
-  // console.log('userId ----->', userId, content);
-// console.log('function---->', areFields(title, content, userId, categoryIds));
-  if (areFields(title, content, userId) === false) {
-    return { status: 400, message: { message: 'Some required fields are missing' } };
-  }
-  // console.log('function---->', await areThereCategory(categoryIds) === true);
-
   if (await areThereCategory(categoryIds) === true) {
     return { status: 400, message: { message: 'one or more "categoryIds" not found' } };
   }
-
+  if (areFields(title, content, userId, categoryIds) === false) {
+    return { status: 400, message: { message: 'Some required fields are missing' } };
+  }
   const result = await sequelize.transaction(async (t) => {
     const blogPost = await BlogPost.create({
       title, content, userId,
@@ -38,7 +29,6 @@ const insertNewPost = async ({ title, content, userId, categoryIds }) => {
       await PostCategory.create({ categoryId, postId: blogPost.id }, { transaction: t });
     });
     await Promise.all(promises);
-
     return blogPost;
   });
   return { status: 201, message: result };

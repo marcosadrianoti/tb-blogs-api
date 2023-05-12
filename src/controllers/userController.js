@@ -11,7 +11,7 @@ const createUser = async (req, res) => {
     }
 
     const { password: _password, ...userWithoutPassword } = userData;
-    userWithoutPassword.userId = user.message.id; // Inclui o id do usuário
+    // userWithoutPassword.userId = user.message.id; // Inclui o id do usuário
 
     const token = createToken(userWithoutPassword);
 

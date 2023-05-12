@@ -2,9 +2,7 @@ const postService = require('../services/postService');
 
 const insertNewPost = async (req, res) => {
     const postData = req.body;
-    postData.userId = req.payload.data.userId;
-    // console.log('postData --------->', postData);
-    // console.log('req.payload.data.id--->', req.payload.data.id);
+    postData.userId = req.payload.data.id;
 
     const blogPost = await postService.insertNewPost(postData);
     
