@@ -1,7 +1,8 @@
 const express = require('express');
 
 const loginRoute = require('./routes/loginRoute');
-const userRoute = require('./routes/userRouters');
+const userRoutes = require('./routes/userRouters');
+const categoryRoutes = require('./routes/categoryRouters');
 // const validateJwt = require('./middlewares/tokenValidation');
 
 // ...
@@ -16,7 +17,8 @@ app.get('/', (_request, response) => {
 app.use(express.json());
 
 app.use('/login', loginRoute);
-app.use('/', userRoute);
+app.use('/', userRoutes);
+app.use('/', categoryRoutes);
 
 // ..
 
