@@ -7,7 +7,6 @@ const createUser = async (req, res) => {
     const user = await UserService.createUser(userData);
     
     if (user.status !== 201) {
-      console.log('user------Entrou-------', user.message);
       return res.status(user.status).json(user.message);
     }
 
@@ -18,4 +17,9 @@ const createUser = async (req, res) => {
     return res.status(201).json({ token });
 };
 
-module.exports = { createUser };
+const getUsers = async (req, res) => {
+  const users = await UserService.getUsers();
+  return res.status(users.status).json(users.message);
+};
+
+module.exports = { createUser, getUsers };

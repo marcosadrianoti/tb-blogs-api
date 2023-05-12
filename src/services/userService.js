@@ -28,16 +28,21 @@ const createUser = async ({ displayName, email, password, image }) => {
  return { status: 409, message: { message: 'User already registered' },
     };
   }
-  
+
   const userCreated = await User.create({ displayName, email, password, image });
   return { status: 201, message: userCreated };
 };
 
-// const getUsers = () => User.findAll();
+const getUsers = async () => {
+  const allUsers = await User.findAll({ attributes: { exclude: ['password'] } });
+  console.log('allUsers ------>', allUsers);
+  return { status: 200, message: allUsers };
+};
 
 // const getByUserId = (userId) => User.findByPk(userId);
 
 module.exports = {
   getForLogin,
   createUser,
+  getUsers,
 };
