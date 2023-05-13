@@ -14,15 +14,6 @@ const getCategories = async () => {
   return { status: 200, message: allCategories };
 };
 
-// const getByUserId = async (userId) => {
-//   const user = await User.findByPk(userId, { attributes: { exclude: ['password'] } });
-//   if (!user) {
-//     return { status: 404,
-//     message: { message: 'User does not exist' } };
-//   }
-//   return { status: 200, message: user };
-// };
-
 module.exports = {
   createCategory,
   getCategories,

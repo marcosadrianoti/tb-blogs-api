@@ -74,9 +74,22 @@ const updatePost = async (postId, userId, { title, content }) => {
   return { status: 200, message: postUpdated.message };
 };
 
+const deletePost = async (postId, userId) => {
+  const post = await getPostById(postId);
+  if (post.status !== 404) {
+    const qtDeleted = await BlogPost.destroy(
+      { where: { id: postId, userId } },
+    );
+    if (qtDeleted === 0) return { status: 401, message: { message: 'Unauthorized user' } };
+    return { status: 204, message: {} };
+  }
+  return post;
+};
+
 module.exports = {
   insertNewPost,
   getPosts,
   getPostById,
   updatePost,
+  deletePost,
 };
