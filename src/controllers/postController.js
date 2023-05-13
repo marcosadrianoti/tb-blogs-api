@@ -20,15 +20,24 @@ const getPosts = async (req, res) => {
 
 const getPostById = async (req, res) => {
   const { id } = req.params;
-  const user = await postService.getPostById(id);
-  if (user.status !== 200) {
-    return res.status(user.status).json(user.message);
+  const post = await postService.getPostById(id);
+  if (post.status !== 200) {
+    return res.status(post.status).json(post.message);
   }
-  return res.status(200).json(user.message);
+  return res.status(200).json(post.message);
+};
+
+const updatePost = async (req, res) => {
+  const postId = req.params.id;
+  const { id } = req.payload.data;
+  const dataBody = req.body;
+  const updatedPost = await postService.updatePost(postId, id, dataBody);
+  return res.status(updatedPost.status).json(updatedPost.message);
 };
 
 module.exports = {
   insertNewPost,
   getPosts,
   getPostById,
+  updatePost,
 };

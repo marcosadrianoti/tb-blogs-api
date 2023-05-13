@@ -34,15 +34,6 @@ const insertNewPost = async ({ title, content, userId, categoryIds }) => {
   return { status: 201, message: result };
 };
 
-// const createCategory = async ({ name }) => {
-//   if (!name) {
-//     return { status: 400, message: { message: '"name" is required' } };
-//   }
-
-//   const categoryCreated = await Category.create({ name });
-//   return { status: 201, message: categoryCreated };
-// };
-
 const getPosts = async () => {
   const allPosts = await BlogPost.findAll({
     include: [
@@ -67,8 +58,25 @@ const getPostById = async (id) => {
   return { status: 200, message: post };
 };
 
+const updatePost = async (postId, userId, { title, content }) => {
+  if (!title || !content) {
+    return { status: 400, message: { message: 'Some required fields are missing' } };
+  }
+  const [qtUpdated] = await BlogPost.update(
+    { title, content },
+    { where: { id: postId, userId } },
+  );
+
+  if (qtUpdated === 0) return { status: 401, message: { message: 'Unauthorized user' } };
+
+  const postUpdated = await getPostById(postId);
+
+  return { status: 200, message: postUpdated.message };
+};
+
 module.exports = {
   insertNewPost,
   getPosts,
   getPostById,
+  updatePost,
 };
