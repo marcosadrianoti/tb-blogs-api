@@ -18,16 +18,17 @@ const getPosts = async (req, res) => {
   return res.status(posts.status).json(posts.message);
 };
 
-// const getByUserId = async (req, res) => {
-//   const userId = req.params.id;
-//   const user = await UserService.getByUserId(userId);
-//   if (user.status !== 200) {
-//     return res.status(user.status).json(user.message);
-//   }
-//   return res.status(200).json(user.message);
-// };
+const getPostById = async (req, res) => {
+  const { id } = req.params;
+  const user = await postService.getPostById(id);
+  if (user.status !== 200) {
+    return res.status(user.status).json(user.message);
+  }
+  return res.status(200).json(user.message);
+};
 
 module.exports = {
   insertNewPost,
   getPosts,
+  getPostById,
 };

@@ -12,6 +12,6 @@ postRouter.get('/post', validateJwt, postController.getPosts);
 
 // categoryRouter.get('/categories', validateJwt, categoryController.getCategories);
 
-// categoryRouter.get('/categories/:id', validateJwt, categoryController.getByUserId);
+postRouter.get('/post/:id', validateJwt, postController.getPostById);
 
 module.exports = postRouter;
