@@ -35,14 +35,6 @@ const getByUserId = async (req, res) => {
 const deleteUserMe = async (req, res) => {
   const { id } = req.payload.data;
   const user = await UserService.deleteUserMe(id);
-  // const post = await getPostById(userId);
-  // if (post.status !== 404) {
-  //   const qtDeleted = await BlogPost.destroy(
-  //     { where: { id: userId } },
-  //   );
-  //   if (qtDeleted === 0) return { status: 401, message: { message: 'Unauthorized user' } };
-  //   return { status: 204, message: {} };
-  // }
   return res.status(user.status).json(user.message);
 };
 

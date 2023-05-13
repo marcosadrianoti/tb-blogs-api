@@ -6,11 +6,11 @@ const postController = require('../controllers/postController');
 
 const postRouter = express.Router();
 
+postRouter.get('/post/search', validateJwt, postController.searchPosts);
+
 postRouter.post('/post', validateJwt, postController.insertNewPost);
 
 postRouter.get('/post', validateJwt, postController.getPosts);
-
-// categoryRouter.get('/categories', validateJwt, categoryController.getCategories);
 
 postRouter.get('/post/:id', validateJwt, postController.getPostById);
 

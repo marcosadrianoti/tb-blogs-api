@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const { BlogPost, PostCategory, Category, sequelize, User } = require('../models');
 
 const areThereCategory = async (categoryIds) => {
@@ -86,10 +87,32 @@ const deletePost = async (postId, userId) => {
   return post;
 };
 
+const searchPosts = async (q) => {
+  const Posts = await BlogPost.findAll(
+    { include: [
+        { model: User, as: 'user', attributes: { exclude: ['password'] } },
+        { model: Category, as: 'categories', attributes: ['id', 'name'] },
+      ],
+      where: {
+        [Op.or]: [
+          { title: {
+            [Op.like]: `%${q}%`,
+          } },
+          { content: {
+            [Op.like]: `%${q}%`,
+          } },
+        ],
+      },
+    },
+  );
+  return { status: 200, message: Posts };
+};
+
 module.exports = {
   insertNewPost,
   getPosts,
   getPostById,
   updatePost,
   deletePost,
+  searchPosts,
 };

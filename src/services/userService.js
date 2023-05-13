@@ -48,15 +48,9 @@ const getByUserId = async (userId) => {
 };
 
 const deleteUserMe = async (userId) => {
-  // const post = await getByUserId(userId);
-  // if (post.status !== 404) {
-    console.log('userId------>', userId);
     await User.destroy(
       { where: { id: userId } },
     );
-  //   if (qtDeleted === 0) return { status: 401, message: { message: 'Unauthorized user' } };
-  //   return { status: 204, message: {} };
-  // }
   return { status: 204, message: {} };
 };
 
