@@ -12,4 +12,6 @@ userRouter.get('/user', validateJwt, userController.getUsers);
 
 userRouter.get('/user/:id', validateJwt, userController.getByUserId);
 
+userRouter.delete('/user/me', validateJwt, userController.deleteUserMe);
+
 module.exports = userRouter;

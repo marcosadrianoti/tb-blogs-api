@@ -47,9 +47,23 @@ const getByUserId = async (userId) => {
   return { status: 200, message: user };
 };
 
+const deleteUserMe = async (userId) => {
+  // const post = await getByUserId(userId);
+  // if (post.status !== 404) {
+    console.log('userId------>', userId);
+    await User.destroy(
+      { where: { id: userId } },
+    );
+  //   if (qtDeleted === 0) return { status: 401, message: { message: 'Unauthorized user' } };
+  //   return { status: 204, message: {} };
+  // }
+  return { status: 204, message: {} };
+};
+
 module.exports = {
   getForLogin,
   createUser,
   getUsers,
   getByUserId,
+  deleteUserMe,
 };
