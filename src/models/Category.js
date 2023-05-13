@@ -17,13 +17,6 @@ const CategorySchema = (sequelize, DataTypes) => {
     },
   );
 
-  // CategoryModel.associate = (models) => {
-  //   CategoryModel.hasMany(models.blog_posts, {
-  //     as: 'blog_posts',
-  //     foreignKey: 'userId',
-  //   });
-  // };
-
   return CategoryModel;
 };
 

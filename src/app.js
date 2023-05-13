@@ -4,7 +4,6 @@ const loginRoute = require('./routes/loginRoute');
 const userRoutes = require('./routes/userRouters');
 const categoryRoutes = require('./routes/categoryRouters');
 const postRoutes = require('./routes/postRoutes');
-// const validateJwt = require('./middlewares/tokenValidation');
 
 // ...
 

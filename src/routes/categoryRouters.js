@@ -10,6 +10,4 @@ categoryRouter.post('/categories', validateJwt, categoryController.createCategor
 
 categoryRouter.get('/categories', validateJwt, categoryController.getCategories);
 
-// categoryRouter.get('/categories/:id', validateJwt, categoryController.getByUserId);
-
 module.exports = categoryRouter;

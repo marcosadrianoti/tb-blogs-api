@@ -1,4 +1,3 @@
-// const { restart } = require('nodemon');
 const { verifyToken } = require('../auth/authfunctions');
 
 const validateJwt = async (req, res, next) => {
