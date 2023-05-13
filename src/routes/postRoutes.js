@@ -8,6 +8,8 @@ const postRouter = express.Router();
 
 postRouter.post('/post', validateJwt, postController.insertNewPost);
 
+postRouter.get('/post', validateJwt, postController.getPosts);
+
 // categoryRouter.get('/categories', validateJwt, categoryController.getCategories);
 
 // categoryRouter.get('/categories/:id', validateJwt, categoryController.getByUserId);

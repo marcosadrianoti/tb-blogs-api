@@ -1,4 +1,4 @@
-const { BlogPost, PostCategory, Category, sequelize } = require('../models');
+const { BlogPost, PostCategory, Category, sequelize, User } = require('../models');
 
 const areThereCategory = async (categoryIds) => {
   const promises = categoryIds.map(async (categoryId) => {
@@ -43,10 +43,15 @@ const insertNewPost = async ({ title, content, userId, categoryIds }) => {
 //   return { status: 201, message: categoryCreated };
 // };
 
-// const getCategories = async () => {
-//   const allCategories = await Category.findAll();
-//   return { status: 200, message: allCategories };
-// };
+const getPosts = async () => {
+  const allPosts = await BlogPost.findAll({
+    include: [
+      { model: User, as: 'user', attributes: { exclude: 'password' } },
+      { model: Category, as: 'categories', through: { attributes: [] } },
+    ],
+  });
+  return { status: 200, message: allPosts };
+};
 
 // const getByUserId = async (userId) => {
 //   const user = await User.findByPk(userId, { attributes: { exclude: ['password'] } });
@@ -59,4 +64,5 @@ const insertNewPost = async ({ title, content, userId, categoryIds }) => {
 
 module.exports = {
   insertNewPost,
+  getPosts,
 };

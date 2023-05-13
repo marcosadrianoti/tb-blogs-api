@@ -13,10 +13,10 @@ const insertNewPost = async (req, res) => {
     return res.status(201).json(blogPost.message);
 };
 
-// const getCategories = async (req, res) => {
-//   const categories = await CategoryService.getCategories();
-//   return res.status(categories.status).json(categories.message);
-// };
+const getPosts = async (req, res) => {
+  const posts = await postService.getPosts();
+  return res.status(posts.status).json(posts.message);
+};
 
 // const getByUserId = async (req, res) => {
 //   const userId = req.params.id;
@@ -29,4 +29,5 @@ const insertNewPost = async (req, res) => {
 
 module.exports = {
   insertNewPost,
+  getPosts,
 };
