@@ -47,13 +47,13 @@ cd meu-diretorio
 Clone o projeto com o comando `git clone`:
 
 ```bash
-git clone git@github.com:marcosadrianoti/tb-store-manager.git
+git clone git@github.com:marcosadrianoti/tb-blogs-api.git
 ```
 
 Acesse o diretório do projeto com o comando `cd`:
 
 ```bash
-cd tb-store-manager
+cd tb-blogs-api
 ```
 
 Instale as dependências executando:
@@ -75,7 +75,6 @@ npm run start
 ```
 
 Para exercutar os teste:
-
 
 ```bash
 npm run test:mocha
