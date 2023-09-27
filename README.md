@@ -73,9 +73,3 @@ Execute a aplicação:
 ```bash
 npm run start
 ```
-
-Para exercutar os teste:
-
-```bash
-npm run test:mocha
-```
