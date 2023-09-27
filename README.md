@@ -4,13 +4,12 @@ Projeto desenvolvido por mim durante o curso de Desenvolvimento Web na Trybe. Di
 <details>
 <summary><strong>Objetivos do projeto:</strong></summary>
 
-  * Desenvolver uma API que é um sistema de gerenciamento de vendas no formato dropshipping em que será possível criar, visualizar, deletar e atualizar produtos e vendas.
+  * Desenvolver uma API e um banco de dados para a produção de conteúdo para um blog.
+  * Desenvolver uma aplicação em `Node.js` usando o pacote `sequelize` para fazer um CRUD de posts
   * Verificar se eu era capaz de:
     * Desenvolver a API utilizando a arquitetura MSC `model-service-controller`.
     * Desenvolver uma API `RESTful`.
-    * Utilizar o banco de dados `MySQL` para a gestão de dados.
-    * Escrever testes.
-    * Usar o `Debugger` do `VScode`.
+    * Utilizar o banco de dados `MySQL` para a gestão de dados.    
 </details>
 <details>
 <summary><strong> Requisitos do projeto:</strong></summary>
