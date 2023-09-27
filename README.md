@@ -14,25 +14,25 @@ Projeto desenvolvido por mim durante o curso de Desenvolvimento Web na Trybe. Di
 <details>
 <summary><strong> Requisitos do projeto:</strong></summary>
 
-  * Crie migrations para as tabelas `users`, `categories`, `blog_posts`, `posts_categories`.
-  * Crie o modelo `User` em `src/models/User.js` com as propriedades corretas.
-  * Sua aplicação deve ter o endpoint POST `/login`.
-  * Sua aplicação deve ter o endpoint POST `/user`.
-  * Sua aplicação deve ter o endpoint GET `/user`.
-  * Sua aplicação deve ter o endpoint GET `/user/:id`.
-  * Crie o modelo `Category` em `src/models/Category.js` com as propriedades corretas.
-  * Sua aplicação deve ter o endpoint POST `/categories`.
-  * Sua aplicação deve ter o endpoint GET `/categories`.
-  * Crie o modelo `BlogPost` em `src/models/BlogPost.js` com as propriedades e associações corretas.
-  * Crie o modelo `PostCategory` em `src/models/PostCategory.js` com as propriedades e associações corretas.
-  * Sua aplicação deve ter o endpoint POST `/post`.
-  * Sua aplicação deve ter o endpoint GET `/post`.
-  * Sua aplicação deve ter o endpoint GET `/post/:id`.
-  * Sua aplicação deve ter o endpoint PUT `/post/:id`.
+  * Criar migrations para as tabelas `users`, `categories`, `blog_posts`, `posts_categories`.
+  * Criar o modelo `User` em `src/models/User.js` com as propriedades corretas.
+  * Criar o endpoint POST `/login`.
+  * Criar o endpoint POST `/user`.
+  * Criar o endpoint GET `/user`.
+  * Criar o endpoint GET `/user/:id`.
+  * Criar o modelo `Category` em `src/models/Category.js` com as propriedades corretas.
+  * Criar o endpoint POST `/categories`.
+  * Criar o endpoint GET `/categories`.
+  * Criar o modelo `BlogPost` em `src/models/BlogPost.js` com as propriedades e associações corretas.
+  * Criar o modelo `PostCategory` em `src/models/PostCategory.js` com as propriedades e associações corretas.
+  * Criar o endpoint POST `/post`.
+  * Criar o endpoint GET `/post`.
+  * Criar o endpoint GET `/post/:id`.
+  * Criar o endpoint PUT `/post/:id`.
   * Requisitos Bônus:
-    * Sua aplicação deve ter o endpoint DELETE `/post/:id`.
-    * Sua aplicação deve ter o endpoint DELETE `/user/me`.
-    * Sua aplicação deve ter o endpoint GET `/post/search?q=:searchTerm`.
+    * Criar o endpoint DELETE `/post/:id`.
+    * Criar o endpoint DELETE `/user/me`.
+    * Criar o endpoint GET `/post/search?q=:searchTerm`.
 </details>
   
 ## Rodando o projeto localmente
