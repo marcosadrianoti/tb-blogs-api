@@ -14,18 +14,25 @@ Projeto desenvolvido por mim durante o curso de Desenvolvimento Web na Trybe. Di
 <details>
 <summary><strong> Requisitos do projeto:</strong></summary>
 
-  * Criar endpoints para listar produtos.
-  * Desenvolver testes que cubram no mínimo 5% de linhas e tenha no mínimo 2 funções escritas nas camadas da sua aplicação.
-  * Criar endpoint para cadastrar produtos.
-  * Criar validações para produtos.
-  * Desenvolver testes que cubram no mínimo 10% de linhas e tenha no mínimo 3 funções escritas nas camadas da sua aplicação.
-  * Criar endpoint para validar e cadastrar vendas.
-  * Desenvolver testes que cubram no mínimo 15% de linhas e tenha no mínimo 4 funções escritas nas camadas da sua aplicação.
-  * Criar endpoints para listar vendas.
-  * Desenvolver testes que cubram no mínimo 20% de linhas e tenha no mínimo 6 funções escritas nas camadas da sua aplicação.
-  * Criar endpoint para atualizar um produto.
-  * Desenvolver testes que cubram no mínimo 25% de linhas e tenha no mínimo 7 funções escritas nas camadas da sua aplicação.
-  * Criar endpoint para deletar um produto.
+  * Crie migrations para as tabelas `users`, `categories`, `blog_posts`, `posts_categories`.
+  * Crie o modelo `User` em `src/models/User.js` com as propriedades corretas.
+  * Sua aplicação deve ter o endpoint POST `/login`.
+  * Sua aplicação deve ter o endpoint POST `/user`.
+  * Sua aplicação deve ter o endpoint GET `/user`.
+  * Sua aplicação deve ter o endpoint GET `/user/:id`.
+  * Crie o modelo `Category` em `src/models/Category.js` com as propriedades corretas.
+  * Sua aplicação deve ter o endpoint POST `/categories`.
+  * Sua aplicação deve ter o endpoint GET `/categories`.
+  * Crie o modelo `BlogPost` em `src/models/BlogPost.js` com as propriedades e associações corretas.
+  * Crie o modelo `PostCategory` em `src/models/PostCategory.js` com as propriedades e associações corretas.
+  * Sua aplicação deve ter o endpoint POST `/post`.
+  * Sua aplicação deve ter o endpoint GET `/post`.
+  * Sua aplicação deve ter o endpoint GET `/post/:id`.
+  * Sua aplicação deve ter o endpoint PUT `/post/:id`.
+  * Requisitos Bônus:
+    * Sua aplicação deve ter o endpoint DELETE `/post/:id`.
+    * Sua aplicação deve ter o endpoint DELETE `/user/me`.
+    * Sua aplicação deve ter o endpoint GET `/post/search?q=:searchTerm`.
 </details>
   
 ## Rodando o projeto localmente
